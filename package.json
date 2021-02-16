@@ -6,7 +6,8 @@
     "devStart": "nodemon server.js",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start",
+    "start": "node server.js",
+    "startAndroid": "node server.js",
     "link": "react-native link",
     "test": "jest",
     "lint": "eslint ."
