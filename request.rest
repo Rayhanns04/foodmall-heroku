@@ -1,3 +1,0 @@
-GET http://192.168.100.12:4090/datasCourierPackage
-# GET http://192.168.100.12:4090/dataPesanan
-# GET http://192.168.100.12:4090/newProducts

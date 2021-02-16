@@ -14,6 +14,7 @@ const saltRounds = 10;
 
 const engines = require('consolidate');
 const paypal = require('paypal-rest-sdk');
+const {proc} = require('react-native-reanimated');
 
 app.engine('ejs', engines.ejs);
 app.set('views', './src/views');
@@ -37,11 +38,6 @@ var con = mysql.createConnection({
   user: 'root',
   password: '',
   database: 'foodmall',
-});
-
-var server = app.listen(4090, () => {
-  var host = server.address().address;
-  var port = server.address().port;
 });
 
 con.connect((error) => {
@@ -366,3 +362,5 @@ app.post('/deliveryAddress', (req, res) => {
     },
   );
 });
+
+app.listen(process.env.PORT || 3000);
