@@ -14,7 +14,8 @@ const saltRounds = 10;
 
 const engines = require('consolidate');
 const paypal = require('paypal-rest-sdk');
-const {proc} = require('react-native-reanimated');
+
+const port = process.env.PORT || 3000;
 
 app.engine('ejs', engines.ejs);
 app.set('views', './src/views');
@@ -25,7 +26,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(
   cors({
-    origin: ['http://192.168.100.12:4090'],
+    origin: [`http://192.168.100.12:${port}`],
     methods: ['GET', 'POST'],
     credentials: true, //Enable Cookies
   }),
@@ -38,6 +39,11 @@ var con = mysql.createConnection({
   user: 'root',
   password: '',
   database: 'foodmall',
+});
+
+var server = app.listen(port, () => {
+  var host = server.address().address;
+  var port = server.address().port;
 });
 
 con.connect((error) => {
@@ -75,8 +81,8 @@ app.post('/paypal', (req, res) => {
       payment_method: 'paypal',
     },
     redirect_urls: {
-      return_url: 'http://localhost:4090/success',
-      cancel_url: 'http://localhost:4090/cancel',
+      return_url: `http://192.168.100.12:${port}/success`,
+      cancel_url: `http://192.168.100.12:${port}/cancel`,
     },
     transactions: [
       {
@@ -362,5 +368,3 @@ app.post('/deliveryAddress', (req, res) => {
     },
   );
 });
-
-app.listen(process.env.PORT || 3000);
