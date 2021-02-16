@@ -15,7 +15,7 @@ const saltRounds = 10;
 const engines = require('consolidate');
 const paypal = require('paypal-rest-sdk');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4090;
 
 app.engine('ejs', engines.ejs);
 app.set('views', './src/views');
@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(
   cors({
-    origin: [`http://192.168.100.12:${port}`],
+    origin: [`http://192.168.133.1:${port}`],
     methods: ['GET', 'POST'],
     credentials: true, //Enable Cookies
   }),
