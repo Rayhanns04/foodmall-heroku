@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(
   cors({
-    origin: [`http://192.168.133.1:${port}`],
+    origin: [`http://localhost:${port}`],
     methods: ['GET', 'POST'],
     credentials: true, //Enable Cookies
   }),
@@ -83,8 +83,8 @@ app.post('/paypal', (req, res) => {
       payment_method: 'paypal',
     },
     redirect_urls: {
-      return_url: `http://192.168.100.12:${port}/success`,
-      cancel_url: `http://192.168.100.12:${port}/cancel`,
+      return_url: `http://localhost:${port}/success`,
+      cancel_url: `http://localhost:${port}/cancel`,
     },
     transactions: [
       {

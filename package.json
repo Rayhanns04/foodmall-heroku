@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "devStart": "nodemon server.js",
+    "start": "node indexserver.js",
+    "devStart": "nodemon indexserver.js",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "node server.js",
     "startAndroid": "node server.js",
     "link": "react-native link",
     "test": "jest",
