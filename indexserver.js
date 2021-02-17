@@ -72,6 +72,10 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/txt', (req, res) => {
+  res.send('Text');
+});
+
 app.post('/paypal', (req, res) => {
   let data = req.body;
   let harga = data.harga;
