@@ -35,10 +35,10 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
 
 var con = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'foodmall',
+  host: 'b6b6nuaf090hrrsqul7b-mysql.services.clever-cloud.com',
+  user: 'uxfkj4bso03knczt',
+  password: 'XXrQYPoLs8C7XLkbcNkv',
+  database: 'b6b6nuaf090hrrsqul7b',
 });
 
 // var server = app.listen(port, () => {
