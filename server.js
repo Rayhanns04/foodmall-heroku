@@ -41,12 +41,12 @@ var con = mysql.createConnection({
   database: 'foodmall',
 });
 
-app.set('port', port);
+// var server = app.listen(port, () => {
+//   var host = server.address().address;
+//   var port = server.address().port;
+// });
 
-var server = app.listen(port, () => {
-  var host = server.address().address;
-  var port = server.address().port;
-});
+app.listen(port, () => console.log(`Listening on port ${port}`));
 
 con.connect((error) => {
   if (error) console.log(`${error} Ada yang salah!`);
