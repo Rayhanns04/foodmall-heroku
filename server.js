@@ -15,7 +15,7 @@ const saltRounds = 10;
 const engines = require('consolidate');
 const paypal = require('paypal-rest-sdk');
 
-const port = process.env.PORT || '4090';
+const port = process.env.PORT || 4090;
 
 app.engine('ejs', engines.ejs);
 app.set('views', './src/views');
