@@ -30,7 +30,7 @@ const Register = () => {
   const iconHeight = 24;
 
   const getDataBase = () => {
-    fetch('http://192.168.100.12:4090/users', {
+    fetch('https://foodmallnodeserver.herokuapp.com/users', {
       method: 'GET',
     })
       .then((response) => response.json())
@@ -40,7 +40,7 @@ const Register = () => {
   };
 
   const register = () => {
-    Axios.post('http://192.168.100.12:4090/register', {
+    Axios.post('https://foodmallnodeserver.herokuapp.com/register', {
       username: username,
       password: password,
     }).then((response) => {

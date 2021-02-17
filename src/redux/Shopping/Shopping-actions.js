@@ -72,7 +72,9 @@ export function fecthProducts(dispatch) {
   return async (dispatch) => {
     dispatch(getProducts());
     try {
-      const res = await fetch('http://192.168.100.12:4090/newProducts');
+      const res = await fetch(
+        'https://foodmallnodeserver.herokuapp.com/newProducts',
+      );
       const data = await res.json();
       dispatch(getProductsSuccess(data.results));
     } catch (e) {

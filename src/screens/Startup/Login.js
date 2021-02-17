@@ -50,7 +50,7 @@ const Login = ({navigation, route, handleGetUsername}) => {
   }, []);
 
   const login = async () => {
-    await Axios.post('http://192.168.100.12:4090/login', {
+    await Axios.post('https://foodmallnodeserver.herokuapp.com/login', {
       username: username,
       password: password,
     }).then((response) => {
